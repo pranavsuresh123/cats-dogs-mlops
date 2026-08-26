@@ -12,33 +12,32 @@ jobs:
       ${{ github.event.workflow_run.conclusion == 'success' &&
           github.event.workflow_run.head_branch == 'main' }}
 
-    runs-on: self-hosted
+    - name: Pull latest image
+      shell: powershell
+      run: |
+        docker compose pull
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Deploy with Docker Compose
+      shell: powershell
+      run: |
+        docker compose up -d
 
-      - name: Pull latest image
-        shell: powershell
-        run: |
-          docker compose pull
+    - name: Show deployment
+      shell: powershell
+      run: |
+        docker compose ps
 
-      - name: Deploy with Docker Compose
-        shell: powershell
-        run: |
-          docker compose up -d
+    - name: Show container logs
+      shell: powershell
+      run: |
+        docker compose logs --tail 50
 
-      - name: Show deployment
-        shell: powershell
-        run: |
-          docker compose ps
+    - name: Wait for API
+      shell: powershell
+      run: |
+        Start-Sleep -Seconds 5
 
-      - name: Wait for API
-        shell: powershell
-        run: |
-          Start-Sleep -Seconds 10
-
-      - name: Run smoke test
-        shell: powershell
-        run: |
-          python scripts\smoke_test.py http://localhost:8000
+    - name: Run smoke test
+      shell: powershell
+      run: |
+        python scripts\smoke_test.py http://localhost:8000
