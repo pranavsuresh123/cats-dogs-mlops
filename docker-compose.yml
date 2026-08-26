@@ -1,0 +1,7 @@
+services:
+  cats-dogs-api:
+    image: ghcr.io/pranavsuresh123/cats-dogs-mlops:latest
+    container_name: cats-dogs-api
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
