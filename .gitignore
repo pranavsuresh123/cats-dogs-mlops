@@ -7,7 +7,7 @@ mlflow.db
 mlruns/
 mlflow_artifacts/
 
-data/processed/
+
 
 .vscode/
 .ipynb_checkpoints/
