@@ -1,6 +1,13 @@
 .venv/
 __pycache__/
 .pytest_cache/
-mlruns/
-data/processed/
 *.pyc
+
+mlflow.db
+mlruns/
+mlflow_artifacts/
+
+data/processed/
+
+.vscode/
+.ipynb_checkpoints/
