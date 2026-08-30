@@ -1,5 +1,6 @@
 # Cats vs Dogs MLOps Pipeline
 
+## Github report link  - https://github.com/pranavsuresh123/cats-dogs-mlops
 ## Video link - https://drive.google.com/file/d/1wBxwmK1L9W18PcmGgxk41bOR-TMM3nmk/view?usp=sharing
 
 ## 1. Project Overview
