@@ -1,5 +1,7 @@
 # Cats vs Dogs MLOps Pipeline
 
+## Video link - https://drive.google.com/file/d/1wBxwmK1L9W18PcmGgxk41bOR-TMM3nmk/view?usp=sharing
+
 ## 1. Project Overview
 
 This project implements an end-to-end MLOps pipeline for **binary image classification of Cats vs Dogs** for a pet adoption platform.
